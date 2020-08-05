@@ -6,14 +6,14 @@ const { fileLoader } = require('ejs')
 const fileUpload = require('express-fileupload')
 const fs=require ('fs')
 const ipfs= new ipfsClient({host:'localhost',port:'5001',protocol:'http'})
-
+//var cor=require('cors')
 const app=express()
 
 app.set('view engine','ejs')
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(fileUpload())
 
-
+//app.use(cors())
 app.get('/',(req,res)=>{
     res.render('home')
 })
@@ -50,6 +50,6 @@ const addFile=async(fileName,filePath) => {
 
 }
 
-app.listen(3000, ()=>{
-    console.log("Server is listening from port 3000")
+app.listen(4000, ()=>{
+    console.log("Server is listening from port 4000")
 })
